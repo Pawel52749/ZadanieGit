@@ -10,13 +10,15 @@ elif [ "$1" == "--logs" ]; then
     for i in $(seq 1 $liczba_logs)
     do
         echo "Nr log $i" > log_$i.txt
-        echo "Stworzone przez skrypt: $0" >> log_$i.txt
+        echo "Stworzony przez: $0" >> log_$i.txt
         date >> log_$i.txt
     done
+elif [ "$1" == "--help" ]; then
+    echo "Dostepne opcje:"
+    echo "  --date        : Wyswietla aktualna date"
+    echo "  --logs [nr]  :  Tworzy [nr] logow (domyslnie tworzy 100)"
+    echo "  --help        : Wyswietla help"
 else
-    echo "Napisz: $0 --date"
-    echo "       $0 --logs [number_of_logs]"
+    echo "Niepoprawne dane uzyj --help"
 fi
-
-
 
